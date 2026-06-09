@@ -92,10 +92,6 @@ videoCapture/
 - RTMP 推流延迟：约 600~700ms
 - CPU 占用率：硬件编码时显著降低
 
-## 许可证
-
-MIT License
-
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request！
