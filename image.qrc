@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>shaderSource/source.frag</file>
+        <file>shaderSource/source.vert</file>
+        <file>image/close.svg</file>
+        <file>image/minimize.svg</file>
+        <file>image/maximize_1.svg</file>
+        <file>image/maximize_0.svg</file>
+        <file>image/icon.svg</file>
+        <file>image/inputSource.svg</file>
+        <file>image/comboArrow.svg</file>
+        <file>image/configuration.svg</file>
+        <file>image/mode.svg</file>
+        <file>image/pause.svg</file>
+        <file>image/start.svg</file>
+        <file>image/stop.svg</file>
+    </qresource>
+</RCC>

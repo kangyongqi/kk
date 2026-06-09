@@ -1,0 +1,2065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FFCapWindow</class>
+ <widget class="QWidget" name="FFCapWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1005</width>
+    <height>694</height>
+   </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"> QSlider::groove:horizontal {
+                background: rgb(51, 51, 51);
+                height:4px;
+                border-radius: 4px;
+            }
+            
+            QSlider::handle:horizontal {
+                background: rgb(207, 207, 207);
+                border: 1px solid #5c5c5c;
+                width: 14px;
+                margin: -4px 0;
+                border-radius: 8px;
+            }
+
+            QSlider::handle:horizontal:hover {
+                background: rgb(207, 207, 207);
+                border: 2px solid #5c5c5c;
+                width: 12px;
+                margin: -4px 0;
+                border-radius: 8px;
+            }</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,8,2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="FFCapHeaderWidget" name="headerWidget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Maximum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="iconLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+	background-image:url(:/image/icon.svg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-color:transparent;
+	border:none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="titleLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    border: none;
+    font: bold 30px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+        </property>
+        <property name="text">
+         <string>理工校园导播系统</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="minimizeBtn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-image:url(:/image/minimize.svg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-color:transparent;
+	border:none;
+}
+QPushButton:hover{
+	background-color:#2B2B2B;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="maximizeBtn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-image:url(:/image/maximize_1.svg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-color:transparent;
+	border:none;
+}
+QPushButton:hover{
+	background-color:#2B2B2B;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="closeBtn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-image:url(:/image/close.svg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-color:transparent;
+	border:none;
+}
+QPushButton:hover{
+	background-color:#2B2B2B;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="centerWidget" native="true">
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget{
+	background-color:#13141A;
+}</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_5" stretch="0">
+        <property name="spacing">
+         <number>5</number>
+        </property>
+        <property name="leftMargin">
+         <number>5</number>
+        </property>
+        <property name="topMargin">
+         <number>5</number>
+        </property>
+        <property name="rightMargin">
+         <number>5</number>
+        </property>
+        <property name="bottomMargin">
+         <number>5</number>
+        </property>
+        <item>
+         <widget class="FFGLRenderWidget" name="GLRenderWidget">
+          <property name="mouseTracking">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="confgWidget" native="true">
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget{
+	background-color:#333333;
+}</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,1">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>5</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QWidget{
+	background-color:#272A33;
+	border:0px;
+	border-radius:5px;
+	
+}</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,2,2,2">
+         <property name="spacing">
+          <number>5</number>
+         </property>
+         <property name="leftMargin">
+          <number>5</number>
+         </property>
+         <property name="topMargin">
+          <number>5</number>
+         </property>
+         <property name="rightMargin">
+          <number>5</number>
+         </property>
+         <property name="bottomMargin">
+          <number>5</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="modeLogoLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>18</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>18</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+	background-image:url(:/image/mode.svg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-color:transparent;
+	border:none;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="modeLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    border: none;
+    font: bold 18px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+             </property>
+             <property name="text">
+              <string>模式选择</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QRadioButton" name="captureRadioButton">
+             <property name="styleSheet">
+              <string notr="true">/* QCheckBox 基础样式 */
+QRadioButton {
+    border: 1px solid;
+    font: bold 15px &quot;Microsoft YaHei UI&quot;;
+	border-radius:3px;
+    color: #A0A0A0;
+    background-color: transparent;
+    padding: 4px;
+    margin: 2px;
+}
+
+/* 复选框指示器（未选中状态） */
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #50AFFF;       /* 未选中时边框为蓝色 */
+    background-color: #50AFFF;       /* 未选中时背景为蓝色 */
+    border-radius: 2px;              /* 轻微圆角 */
+}
+
+/* 选中状态 */
+QRadioButton::indicator:checked {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+/* 悬停状态（未选中时） */
+QRadioButton::indicator:hover {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+
+
+/* 禁用状态 */
+QRadioButton:disabled {
+    color: #606060;
+}
+
+QRadioButton:disabled::indicator {
+    border-color: #444;              /* 禁用时边框为深灰 */
+    background-color: #202020;       /* 禁用时背景为深灰 */
+}
+
+QRadioButton:disabled::indicator:checked {
+    border-color: #606060;           /* 禁用选中时边框为中灰 */
+    background-color: #303030;
+}
+
+/* 文字悬停状态 */
+QRadioButton:hover {
+    color: #B0B0B0;
+}
+
+QRadioButton:checked {
+    color: #FFFFFF;                  /* 选中时文字为白色 */
+}</string>
+             </property>
+             <property name="text">
+              <string>录制</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="liveRadioButton">
+             <property name="styleSheet">
+              <string notr="true">/* QCheckBox 基础样式 */
+QRadioButton {
+    border: 1px solid;
+    font: bold 15px &quot;Microsoft YaHei UI&quot;;
+	border-radius:3px;
+    color: #A0A0A0;
+    background-color: transparent;
+    padding: 4px;
+    margin: 2px;
+}
+
+/* 复选框指示器（未选中状态） */
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #50AFFF;       /* 未选中时边框为蓝色 */
+    background-color: #50AFFF;       /* 未选中时背景为蓝色 */
+    border-radius: 2px;              /* 轻微圆角 */
+}
+
+/* 选中状态 */
+QRadioButton::indicator:checked {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+/* 悬停状态（未选中时） */
+QRadioButton::indicator:hover {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+
+
+/* 禁用状态 */
+QRadioButton:disabled {
+    color: #606060;
+}
+
+QRadioButton:disabled::indicator {
+    border-color: #444;              /* 禁用时边框为深灰 */
+    background-color: #202020;       /* 禁用时背景为深灰 */
+}
+
+QRadioButton:disabled::indicator:checked {
+    border-color: #606060;           /* 禁用选中时边框为中灰 */
+    background-color: #303030;
+}
+
+/* 文字悬停状态 */
+QRadioButton:hover {
+    color: #B0B0B0;
+}
+
+QRadioButton:checked {
+    color: #FFFFFF;                  /* 选中时文字为白色 */
+}</string>
+             </property>
+             <property name="text">
+              <string>直播</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="captureLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    border: none;
+    font: bold 15px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+             </property>
+             <property name="text">
+              <string>录制路径:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="captureLineEdit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>500</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* 基础样式 */
+QLineEdit {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px 8px;
+    font: bold 15px &quot;Microsoft YaHei&quot;; /* 加粗字体 */
+    color: white;
+}
+
+/* 获得焦点时的样式 */
+QLineEdit:focus {
+    border-color: #4a86e8;
+}
+
+/* 禁用状态 */
+QLineEdit:disabled {
+    background: #f5f5f5;
+    color: #888;
+}</string>
+             </property>
+             <property name="text">
+              <string>capture.mp4</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0,0">
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="liveLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    border: none;
+    font: bold 15px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+             </property>
+             <property name="text">
+              <string>直播路径：</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="liveLineEdit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>500</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* 基础样式 */
+QLineEdit {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px 8px;
+    font: bold 15px &quot;Microsoft YaHei&quot;; /* 加粗字体 */
+    color: white;
+}
+
+/* 获得焦点时的样式 */
+QLineEdit:focus {
+    border-color: #4a86e8;
+}
+
+/* 禁用状态 */
+QLineEdit:disabled {
+    background: #f5f5f5;
+    color: #888;
+}</string>
+             </property>
+             <property name="text">
+              <string>rtmp://192.168.137.1:1935/live</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="sourceWidget" native="true">
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QWidget{
+	background-color:#272A33;
+	border:0px;
+	border-radius:5px;
+	
+}</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,2,2,2">
+         <property name="spacing">
+          <number>5</number>
+         </property>
+         <property name="leftMargin">
+          <number>5</number>
+         </property>
+         <property name="topMargin">
+          <number>5</number>
+         </property>
+         <property name="rightMargin">
+          <number>5</number>
+         </property>
+         <property name="bottomMargin">
+          <number>5</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="sourceLogoLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>18</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>18</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+	background-image:url(:/image/inputSource.svg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-color:transparent;
+	border:none;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="sourceLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    border: none;
+    font: bold 18px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+             </property>
+             <property name="text">
+              <string>输入源</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="screenCheckBox">
+             <property name="styleSheet">
+              <string notr="true">/* QCheckBox 基础样式 */
+QCheckBox {
+    border: 1px solid;
+    font: bold 15px &quot;Microsoft YaHei UI&quot;;
+	border-radius:3px;
+    color: #A0A0A0;
+    background-color: transparent;
+    padding: 4px;
+    margin: 2px;
+}
+
+/* 复选框指示器（未选中状态） */
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #50AFFF;       /* 未选中时边框为蓝色 */
+    background-color: #50AFFF;       /* 未选中时背景为蓝色 */
+    border-radius: 2px;              /* 轻微圆角 */
+}
+
+/* 选中状态 */
+QCheckBox::indicator:checked {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+/* 悬停状态（未选中时） */
+QCheckBox::indicator:hover {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+
+
+/* 禁用状态 */
+QCheckBox:disabled {
+    color: #606060;
+}
+
+QCheckBox:disabled::indicator {
+    border-color: #444;              /* 禁用时边框为深灰 */
+    background-color: #202020;       /* 禁用时背景为深灰 */
+}
+
+QCheckBox:disabled::indicator:checked {
+    border-color: #606060;           /* 禁用选中时边框为中灰 */
+    background-color: #303030;
+}
+
+/* 文字悬停状态 */
+QCheckBox:hover {
+    color: #B0B0B0;
+}
+
+QCheckBox:checked {
+    color: #FFFFFF;                  /* 选中时文字为白色 */
+}</string>
+             </property>
+             <property name="text">
+              <string>显示器采集</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="videoCheckBox">
+             <property name="styleSheet">
+              <string notr="true">/* QCheckBox 基础样式 */
+QCheckBox {
+    border: 1px solid;
+    font: bold 15px &quot;Microsoft YaHei UI&quot;;
+	border-radius:3px;
+    color: #A0A0A0;
+    background-color: transparent;
+    padding: 4px;
+    margin: 2px;
+}
+
+/* 复选框指示器（未选中状态） */
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #50AFFF;       /* 未选中时边框为蓝色 */
+    background-color: #50AFFF;       /* 未选中时背景为蓝色 */
+    border-radius: 2px;              /* 轻微圆角 */
+}
+
+/* 选中状态 */
+QCheckBox::indicator:checked {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+/* 悬停状态（未选中时） */
+QCheckBox::indicator:hover {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+
+
+/* 禁用状态 */
+QCheckBox:disabled {
+    color: #606060;
+}
+
+QCheckBox:disabled::indicator {
+    border-color: #444;              /* 禁用时边框为深灰 */
+    background-color: #202020;       /* 禁用时背景为深灰 */
+}
+
+QCheckBox:disabled::indicator:checked {
+    border-color: #606060;           /* 禁用选中时边框为中灰 */
+    background-color: #303030;
+}
+
+/* 文字悬停状态 */
+QCheckBox:hover {
+    color: #B0B0B0;
+}
+
+QCheckBox:checked {
+    color: #FFFFFF;                  /* 选中时文字为白色 */
+}</string>
+             </property>
+             <property name="text">
+              <string>视频文件</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_10">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="cameraCheckBox">
+             <property name="styleSheet">
+              <string notr="true">/* QCheckBox 基础样式 */
+QCheckBox {
+    border: 1px solid;
+    font: bold 15px &quot;Microsoft YaHei UI&quot;;
+	border-radius:3px;
+    color: #A0A0A0;
+    background-color: transparent;
+    padding: 4px;
+    margin: 2px;
+}
+
+/* 复选框指示器（未选中状态） */
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #50AFFF;       /* 未选中时边框为蓝色 */
+    background-color: #50AFFF;       /* 未选中时背景为蓝色 */
+    border-radius: 2px;              /* 轻微圆角 */
+}
+
+/* 选中状态 */
+QCheckBox::indicator:checked {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+/* 悬停状态（未选中时） */
+QCheckBox::indicator:hover {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+
+
+/* 禁用状态 */
+QCheckBox:disabled {
+    color: #606060;
+}
+
+QCheckBox:disabled::indicator {
+    border-color: #444;              /* 禁用时边框为深灰 */
+    background-color: #202020;       /* 禁用时背景为深灰 */
+}
+
+QCheckBox:disabled::indicator:checked {
+    border-color: #606060;           /* 禁用选中时边框为中灰 */
+    background-color: #303030;
+}
+
+/* 文字悬停状态 */
+QCheckBox:hover {
+    color: #B0B0B0;
+}
+
+QCheckBox:checked {
+    color: #FFFFFF;                  /* 选中时文字为白色 */
+}</string>
+             </property>
+             <property name="text">
+              <string>摄像头</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cameraComboBox">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="mouseTracking">
+              <bool>true</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* 基础样式 */
+QComboBox {
+    border: 1px solid #666;
+    border-radius: 4px;
+    padding: 0px 0px;
+    padding-right: 25px;
+    font: bold 15px &quot;Microsoft YaHei UI&quot;;
+    color: #fff;
+    background-color: #707070;
+    selection-background-color: #409EFF;
+    selection-color: white;
+}
+
+/* 下拉按钮 */
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: #666;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #686868;
+}
+
+/* 下拉箭头 */
+QComboBox::down-arrow {
+    image: url(&quot;:/image/comboArrow&quot;);
+    width: 10px;
+    height: 6px;
+}
+
+/* 下拉列表视图 */
+QComboBox QAbstractItemView {
+    border: 1px solid #666;
+    border-radius: 4px;
+    background-color: #707070;
+    selection-background-color: #409EFF;
+    selection-color: white;
+    padding: 4px;
+    outline: none;
+}
+
+/* 悬停状态 */
+QComboBox:hover {
+    color: #fff;
+    border-color: #999;
+}
+
+QComboBox:hover::drop-down {
+    background-color: #606060;
+}
+
+/* 下拉状态 */
+QComboBox:on {
+    border-color: #409EFF;
+    color: #fff;
+}
+
+QComboBox:on::drop-down {
+    border-left-color: #409EFF;
+    background-color: #606060;
+}
+
+
+/* 禁用状态 */
+QComboBox:disabled {
+    color: #ccc;
+    background-color: #888;
+    border-color: #777;
+}
+
+QComboBox:disabled::drop-down {
+    border-left-color: #777;
+    background-color: #808080;
+}
+
+/* 滚动条样式 */
+QComboBox QScrollBar:vertical {
+    border: none;
+    background: #606060;
+    width: 8px;
+    margin: 0;
+}
+
+QComboBox QScrollBar::handle:vertical {
+    background: #999;
+    min-height: 20px;
+    border-radius: 4px;
+}
+  </string>
+             </property>
+             <item>
+              <property name="text">
+               <string>请选择摄像头</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>嵌入摄像头</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>USB摄像头</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_11">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="microphoneCheckBox">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* QCheckBox 基础样式 */
+QCheckBox {
+    border: 1px solid;
+    font: bold 15px &quot;Microsoft YaHei UI&quot;;
+	border-radius:3px;
+    color: #A0A0A0;
+    background-color: transparent;
+    padding: 4px;
+    margin: 2px;
+}
+
+/* 复选框指示器（未选中状态） */
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #50AFFF;       /* 未选中时边框为蓝色 */
+    background-color: #50AFFF;       /* 未选中时背景为蓝色 */
+    border-radius: 2px;              /* 轻微圆角 */
+}
+
+/* 选中状态 */
+QCheckBox::indicator:checked {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+/* 悬停状态（未选中时） */
+QCheckBox::indicator:hover {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+
+
+/* 禁用状态 */
+QCheckBox:disabled {
+    color: #606060;
+}
+
+QCheckBox:disabled::indicator {
+    border-color: #444;              /* 禁用时边框为深灰 */
+    background-color: #202020;       /* 禁用时背景为深灰 */
+}
+
+QCheckBox:disabled::indicator:checked {
+    border-color: #606060;           /* 禁用选中时边框为中灰 */
+    background-color: #303030;
+}
+
+/* 文字悬停状态 */
+QCheckBox:hover {
+    color: #B0B0B0;
+}
+
+QCheckBox:checked {
+    color: #FFFFFF;                  /* 选中时文字为白色 */
+}</string>
+             </property>
+             <property name="text">
+              <string>麦克风</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="audioCheckBox">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* QCheckBox 基础样式 */
+QCheckBox {
+    border: 1px solid;
+    font: bold 15px &quot;Microsoft YaHei UI&quot;;
+	border-radius:3px;
+    color: #A0A0A0;
+    background-color: transparent;
+    padding: 4px;
+    margin: 2px;
+}
+
+/* 复选框指示器（未选中状态） */
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #50AFFF;       /* 未选中时边框为蓝色 */
+    background-color: #50AFFF;       /* 未选中时背景为蓝色 */
+    border-radius: 2px;              /* 轻微圆角 */
+}
+
+/* 选中状态 */
+QCheckBox::indicator:checked {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+/* 悬停状态（未选中时） */
+QCheckBox::indicator:hover {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+
+
+/* 禁用状态 */
+QCheckBox:disabled {
+    color: #606060;
+}
+
+QCheckBox:disabled::indicator {
+    border-color: #444;              /* 禁用时边框为深灰 */
+    background-color: #202020;       /* 禁用时背景为深灰 */
+}
+
+QCheckBox:disabled::indicator:checked {
+    border-color: #606060;           /* 禁用选中时边框为中灰 */
+    background-color: #303030;
+}
+
+/* 文字悬停状态 */
+QCheckBox:hover {
+    color: #B0B0B0;
+}
+
+QCheckBox:checked {
+    color: #FFFFFF;                  /* 选中时文字为白色 */
+}</string>
+             </property>
+             <property name="text">
+              <string>桌面音频</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_3" native="true">
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QWidget{
+	background-color:#272A33;
+	border:0px;
+	border-radius:5px;
+	
+}</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="spacing">
+          <number>5</number>
+         </property>
+         <property name="leftMargin">
+          <number>5</number>
+         </property>
+         <property name="topMargin">
+          <number>5</number>
+         </property>
+         <property name="rightMargin">
+          <number>5</number>
+         </property>
+         <property name="bottomMargin">
+          <number>5</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="captureConfigLogoLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>18</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>18</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+	background-image:url(:/image/configuration.svg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-color:transparent;
+	border:none;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="captureConfigLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    border: none;
+    font: bold 18px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+             </property>
+             <property name="text">
+              <string>录制设置</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,3,1,3">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="microphoneVolumeLabel">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    border: none;
+    font: bold 14px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+             </property>
+             <property name="text">
+              <string>麦克风</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="microphoneVlomeSlider">
+             <property name="styleSheet">
+              <string notr="true">QSlider::groove:horizontal {
+    background: #E0E0E0; /* 轨道背景改为浅灰色 */
+    height: 4px;
+    border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #50AFFF; /* 已划过区域为蓝色 */
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: rgb(207, 207, 207);
+    border: 1px solid #5c5c5c;
+    width: 14px;
+    border-radius: 7px; /* 修正为宽度的一半，确保圆形 */
+    margin: -5px 0;    /* 调整垂直居中 */
+}
+
+QSlider::handle:horizontal:hover {
+    border: 2px solid #5c5c5c;
+    width: 12px;
+    margin: -4px 0;
+    border-radius: 6px; /* 保持圆形 */
+}</string>
+             </property>
+             <property name="maximum">
+              <number>200</number>
+             </property>
+             <property name="value">
+              <number>99</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="audioVolumeLabel">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    border: none;
+    font: bold 14px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+             </property>
+             <property name="text">
+              <string>桌面音频</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="audioVolumeSlider">
+             <property name="styleSheet">
+              <string notr="true">QSlider::groove:horizontal {
+    background: #E0E0E0; /* 轨道背景改为浅灰色 */
+    height: 4px;
+    border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #50AFFF; /* 已划过区域为蓝色 */
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: rgb(207, 207, 207);
+    border: 1px solid #5c5c5c;
+    width: 14px;
+    border-radius: 7px; /* 修正为宽度的一半，确保圆形 */
+    margin: -5px 0;    /* 调整垂直居中 */
+}
+
+QSlider::handle:horizontal:hover {
+    border: 2px solid #5c5c5c;
+    width: 12px;
+    margin: -4px 0;
+    border-radius: 6px; /* 保持圆形 */
+}</string>
+             </property>
+             <property name="maximum">
+              <number>200</number>
+             </property>
+             <property name="value">
+              <number>99</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="beautyCheckBox">
+             <property name="styleSheet">
+              <string notr="true">/* QCheckBox 基础样式 */
+QCheckBox {
+    border: 1px solid;
+    font: bold 15px &quot;Microsoft YaHei UI&quot;;
+	border-radius:3px;
+    color: #A0A0A0;
+    background-color: transparent;
+    padding: 4px;
+    margin: 2px;
+}
+
+/* 复选框指示器（未选中状态） */
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #50AFFF;       /* 未选中时边框为蓝色 */
+    background-color: #50AFFF;       /* 未选中时背景为蓝色 */
+    border-radius: 2px;              /* 轻微圆角 */
+}
+
+/* 选中状态 */
+QCheckBox::indicator:checked {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+/* 悬停状态（未选中时） */
+QCheckBox::indicator:hover {
+    border: 2px solid #FFFFFF;       /* 选中时边框为白色 */
+    background-color: #50AFFF;       /* 选中时背景为蓝色 */
+}
+
+
+
+/* 禁用状态 */
+QCheckBox:disabled {
+    color: #606060;
+}
+
+QCheckBox:disabled::indicator {
+    border-color: #444;              /* 禁用时边框为深灰 */
+    background-color: #202020;       /* 禁用时背景为深灰 */
+}
+
+QCheckBox:disabled::indicator:checked {
+    border-color: #606060;           /* 禁用选中时边框为中灰 */
+    background-color: #303030;
+}
+
+/* 文字悬停状态 */
+QCheckBox:hover {
+    color: #B0B0B0;
+}
+
+QCheckBox:checked {
+    color: #FFFFFF;                  /* 选中时文字为白色 */
+}</string>
+             </property>
+             <property name="text">
+              <string>美颜</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="smoothLabel">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    border: none;
+    font: bold 14px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+             </property>
+             <property name="text">
+              <string>磨皮</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="smoothSlider">
+             <property name="styleSheet">
+              <string notr="true">QSlider::groove:horizontal {
+    background: #E0E0E0; /* 轨道背景改为浅灰色 */
+    height: 4px;
+    border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #50AFFF; /* 已划过区域为蓝色 */
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: rgb(207, 207, 207);
+    border: 1px solid #5c5c5c;
+    width: 14px;
+    border-radius: 7px; /* 修正为宽度的一半，确保圆形 */
+    margin: -5px 0;    /* 调整垂直居中 */
+}
+
+QSlider::handle:horizontal:hover {
+    border: 2px solid #5c5c5c;
+    width: 12px;
+    margin: -4px 0;
+    border-radius: 6px; /* 保持圆形 */
+}</string>
+             </property>
+             <property name="maximum">
+              <number>5</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="whiteLabel">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    border: none;
+    font: bold 14px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+             </property>
+             <property name="text">
+              <string>美白</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="whiteSlider">
+             <property name="styleSheet">
+              <string notr="true">QSlider::groove:horizontal {
+    background: #E0E0E0; /* 轨道背景改为浅灰色 */
+    height: 4px;
+    border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #50AFFF; /* 已划过区域为蓝色 */
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: rgb(207, 207, 207);
+    border: 1px solid #5c5c5c;
+    width: 14px;
+    border-radius: 7px; /* 修正为宽度的一半，确保圆形 */
+    margin: -5px 0;    /* 调整垂直居中 */
+}
+
+QSlider::handle:horizontal:hover {
+    border: 2px solid #5c5c5c;
+    width: 12px;
+    margin: -4px 0;
+    border-radius: 6px; /* 保持圆形 */
+}</string>
+             </property>
+             <property name="maximum">
+              <number>5</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_14">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="startBtn">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+	background-image:url(:/image/pause.svg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-color:transparent;
+	border:none;
+}
+QPushButton:hover{
+	background-color:#2B2B2B;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="stopBtn">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+	background-image:url(:/image/stop.svg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-color:transparent;
+	border:none;
+}
+QPushButton:hover{
+	background-color:#2B2B2B;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="captureProcessLabel">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    border: none;
+    font: bold 18px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+             </property>
+             <property name="text">
+              <string>累计时长：</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="captureProcessTimeLabel">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    border: none;
+    font: bold 18px &quot;Microsoft YaHei UI&quot;;
+	color:#A0A0A0;
+    background-color: transparent;
+}    </string>
+             </property>
+             <property name="text">
+              <string>00:00:00</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FFCapHeaderWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/ffcapheaderwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FFGLRenderWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>opengl/ffglrenderwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
