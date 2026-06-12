@@ -69,7 +69,6 @@ videoCapture/
 
 ### 环境要求
 - Qt 5.15+ 或 Qt 6.x
-- Visual Studio 2019+（Windows）
 - FFmpeg 6.0 开发库
 - OpenCV 4.0+ 开发库
 
