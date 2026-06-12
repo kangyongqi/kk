@@ -37,7 +37,6 @@ videoCapture/
 ├── muxer/            # 复用模块
 ├── renderer/         # 渲染模块
 ├── ui/               # 界面模块
-└── 3rdparty/         # 第三方库
 ```
 
 ## 核心功能模块
